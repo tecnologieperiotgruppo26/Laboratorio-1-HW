@@ -15,7 +15,6 @@
 
 const int ledRosso = 11;
 const int ledVerde = 12;
-const int delayRosso = 3; 
 
 const float rossoHalfPeriod = 1.5;
 const float verdeHalfPeriod = 3.5;
