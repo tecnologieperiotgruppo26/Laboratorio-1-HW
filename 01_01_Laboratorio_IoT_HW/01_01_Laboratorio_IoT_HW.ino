@@ -20,8 +20,8 @@ const int delayRosso = 3;
 const float rossoHalfPeriod = 1.5;
 const float verdeHalfPeriod = 3.5;
 
-int statoLedRosso = LOW;
-int statoLedVerde = LOW;
+volatile int statoLedRosso = LOW;
+volatile int statoLedVerde = LOW;
 
 void setup() {
   // put your setup code here, to run once:
