@@ -51,15 +51,14 @@ void loop() {
 
 
 void SerialPrintStatus(){
-  if (Serial.available() >0) {
     int inByte = Serial.read();
 
     if (inByte == 'R'){
-      Serial.println("Stato ledRosso :" + statoLedRosso);
+      Serial.println("Stato ledRosso :" + String(statoLedRosso));
       Serial.flush();
     }
     else if (inByte == 'V'){
-      Serial.println("Stato ledVerde :" + statoLedVerde);
+      Serial.println("Stato ledVerde :" + String(statoLedVerde));
       Serial.flush();
     }
     else {
@@ -67,8 +66,7 @@ void SerialPrintStatus(){
       Serial.flush();    
     }
     
-  }
-}
+ }
 
 /*Funzione blinkGreen chiamata dalla funzione interrupt ISR*/
 void blinkGreen() {

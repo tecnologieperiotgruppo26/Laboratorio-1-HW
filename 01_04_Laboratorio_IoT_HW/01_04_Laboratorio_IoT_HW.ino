@@ -32,11 +32,11 @@ void loop() {
       if (currentSpeed >= 255){
         currentSpeed = 255;
         analogWrite(fanPin, currentSpeed);
-        Serial.println("Velocità massima già raggiunta! v = " + int(currentSpeed));
+        Serial.println("Velocità massima già raggiunta! v = " + String(currentSpeed));
         Serial.flush();
       }
         analogWrite(fanPin, currentSpeed);
-        Serial.println("Aumento la velocità, V = " + int(currentSpeed));
+        Serial.println("Aumento la velocità, V = " + String(currentSpeed));
         Serial.flush();
       }
     else if (inByte == '-'){
@@ -44,11 +44,11 @@ void loop() {
       if (currentSpeed <= 0){
         currentSpeed = 0;
         analogWrite(fanPin, currentSpeed);
-        Serial.println("Velocità minima già raggiunta! v = " + int(currentSpeed));
+        Serial.println("Velocità minima già raggiunta! v = " + String(currentSpeed));
         Serial.flush();
       }
         analogWrite(fanPin, currentSpeed);
-        Serial.println("Diminuisco la velocità, V= " + int(currentSpeed));
+        Serial.println("Diminuisco la velocità, V= " + String(currentSpeed));
         Serial.flush();
     } 
     else {

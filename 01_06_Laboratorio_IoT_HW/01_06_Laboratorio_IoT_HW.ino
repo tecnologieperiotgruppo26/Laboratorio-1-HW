@@ -32,16 +32,19 @@ void setup() {
 void loop() {
   // put your main code here, to run repeatedly:
   int vDigit = analogRead(tempPin);
-  // ora trasformo l'entrata da digital a vsignal
-  float vSig = vDigit*5/1024;
-  //calcolo il valore di R, nelle formule va moltiplicato per r0, 
-  //successivamente nel calcolo di T va diviso quindi lo semplifico 
-  //direttamente, inoltre il valore di T esce direttamente in Celsius
-  float R = (5/vSig-1);
-  float T = (1/((log(R)/beta)+(1/298)))-273;
+  //calcolo il valore di R, successivamente
+  //uso il datasheet per ricavare le formule di conversione e 
+  //calcolo T, per poi convertire in Celsius
+  float R = ((1023.0/vDigit)-1.0);
+  R = R0*R;
+  float loga = log(R/R0)/beta;
+  float TK = 1.0/((loga)+(1.0/298.15));
+  float TC = TK-273.15;
+  
 
-  lcd.setCursor(0, 13);
-  lcd.print(T, 2);
+  lcd.setCursor(12, 0);
+  lcd.print(String(TC));
+  
   delay(sleepTime);
   
   

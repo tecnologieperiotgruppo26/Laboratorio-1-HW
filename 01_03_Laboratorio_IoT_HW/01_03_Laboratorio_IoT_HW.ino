@@ -27,6 +27,7 @@ void setup() {
   Serial.println("Lab 1.3 Starting");
   Serial.println("Aspettiamo ulteriori 30 secondi per il setup del sensore PIR");
   delay(30000);
+  Serial.println("INIZIAMO!");
   
 }
 
